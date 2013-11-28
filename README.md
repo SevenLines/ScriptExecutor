@@ -22,3 +22,17 @@ Simple command line sql select script executor for MSSQL
                      the list of available values
 
   --help             Display help screen.
+  
+  Examples:
+  
+  1. Output result to output.txt
+
+  ScriptExecutor.exe -c "SELECT * FROM TableName WHERE id in (1,2,3)" -d "SimpleDataBase" >output.txt
+  
+  2. Load script from file
+  
+  ScriptExecutor.exe -c "script.sql" -d "SimpleDataBase" >output.txt
+
+  3. Load script from file and ouput result to file using UTF8 encoding
+
+  ScriptExecutor.exe -c "script.sql" -d "SimpleDataBase" -o "output.txt" -v -e "65001"
